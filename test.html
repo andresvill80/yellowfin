@@ -1,0 +1,65 @@
+<html>
+    <head><title>test</title></head>
+    <body>
+        <script type="text/javascript">
+            (function() {
+                let createElement = document.createElement('div');
+                createElement.id = 'rpt783315';
+                createElement.className = "dashboard";
+                
+                if(document.body) {
+                    if(document.currentScript) {
+                        document.currentScript.parentElement.insertBefore(createElement, document.currentScript);
+                    } else {
+                        document.body.appendChild(createElement);
+                    }
+                } else {
+                    //Only use document write if the body doesn't exist (IE using on a test page)
+                    document.write(createElement.outerHTML);
+                }
+                
+                var rpt783315Callback = function() {
+                    let options = {
+                        element: document.querySelector('div#rpt783315')
+                    }
+                    let dashOptions = {"dashboardUUID":"e7409ff2-f846-44e1-a603-b78ec51b20b9"};
+                    options = Object.assign(options, dashOptions);
+                    if(dashOptions.clientOrg) {
+                        window['yellowfin'].clientOrg = dashOptions.clientOrg;
+                    }
+                    window['yellowfin'].dashboards.loadDashboard(options).then(function(data) {
+                        return;
+                    }).catch(function(data) {
+                        if(data.accessDenied) {
+                            document.querySelector('div#rpt783315').innerHTML = data.accessDenied;
+                        }
+                    });
+                }
+                if(!window['yellowfin']) {
+                    window['yellowfin'] = {
+                            loading: true,
+                            load: new Promise((resolve) => {
+                                //yellowfin hasn't been included on this page yet.
+                                //we need to make that happen
+                                var apiURL = 'http://yellowfin.sencha.local:8080/JsAPI/v3';
+                                
+                                var s = document.createElement('script');
+                                s.type="text/javascript";
+                                s.src = apiURL;
+                                document.head.appendChild(s);
+                                
+                                s.onload = function() {
+                                    resolve();
+                                };
+                            })
+                    };
+                }
+                window['yellowfin'].load.then(() => {
+                    window['yellowfin'].loadDashboardAPI().then(function() {
+                        rpt783315Callback();
+                    });
+                });
+            }());
+        </script>
+    </body>
+</html>
