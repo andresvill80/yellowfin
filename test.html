@@ -1,10 +1,11 @@
 <html>
     <head><title>test</title></head>
+    <script src="http://yellowfin.sencha.local:8080/JsAPI/v3"></script>
     <body>
         <script type="text/javascript">
             (function() {
                 let createElement = document.createElement('div');
-                createElement.id = 'rpt783315';
+                createElement.id = 'rpt307506';
                 createElement.className = "dashboard";
                 
                 if(document.body) {
@@ -18,9 +19,9 @@
                     document.write(createElement.outerHTML);
                 }
                 
-                var rpt783315Callback = function() {
+                var rpt307506Callback = function() {
                     let options = {
-                        element: document.querySelector('div#rpt783315')
+                        element: document.querySelector('div#rpt307506')
                     }
                     let dashOptions = {"dashboardUUID":"e7409ff2-f846-44e1-a603-b78ec51b20b9"};
                     options = Object.assign(options, dashOptions);
@@ -31,7 +32,7 @@
                         return;
                     }).catch(function(data) {
                         if(data.accessDenied) {
-                            document.querySelector('div#rpt783315').innerHTML = data.accessDenied;
+                            document.querySelector('div#rpt307506').innerHTML = data.accessDenied;
                         }
                     });
                 }
@@ -56,7 +57,7 @@
                 }
                 window['yellowfin'].load.then(() => {
                     window['yellowfin'].loadDashboardAPI().then(function() {
-                        rpt783315Callback();
+                        rpt307506Callback();
                     });
                 });
             }());

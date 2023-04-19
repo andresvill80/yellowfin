@@ -1,0 +1,42 @@
+
+<!-- THIS IS NOT COMPLETE -->
+<html>
+    <head>
+        <title>Yellowfin JS</title>
+        <script src="http://yellowfin.sencha.local:8080/JsAPI/v3"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function () {
+                debugger;
+
+                window.yellowfin.init().then(() => {
+                    debugger;
+                    let dashboardDiv=document.querySelector('div#Content');
+                    // GENERATE TOKEN FOR SESSION ID
+
+                    let newSession = window.yellowfin.newSession('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiJ0ZXN0QHRlc3QuY29tIiwiZmlyc3ROYW1lIjoiRG9lIn0.nkI-ayWggv3YAydPHqH5FP94YVV0NafF2ah4bfTV89k').then(function (x,y,z) {
+                        console.log(newSession);
+                        debugger;
+                        // PULL DASHBOARD
+                            // window.yellowfin.loadDashboard().then();
+                    });
+                    debugger;
+                    // me.yellowfinAPI.loadDashboard({
+                    //     dashboardUUID: "e7409ff2-f846-44e1-a603-b78ec51b20b9",
+                    //     element: dashboardDiv,
+                    //     showInfo: false
+                    // })
+                });
+            }
+        </script>
+        <div id="Content" style="width: 800; height:600; background-color: #eee;"></div>
+
+        <!-- <div id="myReportDiv" style="background: #eee; width: 500px; height: 350px">
+            <script src="http://yellowfin.sencha.local:8080/JsAPI?dashUUID=e7409ff2-f846-44e1-a603-b78ec51b20b9&elementId=myReportDiv&username=test@test.com&password=1234" type="text/javascript"></script>
+        </div> -->
+        <!-- <div id="myReportDiv" style="background: #eee; width: 500px; height: 350px">
+            <script src="http://yellowfin.sencha.local:8080/JsAPI?dashUUID=f20c11a1-4aa3-4a2c-925a-209ba032558f&elementId=myReportDiv&username=test@test.com&password=1234" type="text/javascript"></script>
+        </div> -->
+    </body>
+</html>

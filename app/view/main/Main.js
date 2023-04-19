@@ -20,10 +20,8 @@ Ext.define('App.view.main.Main', {
         'App.view.main.List',
 
         'App.view.yellowfin.Dashboard',
-        'App.view.yellowfin.DashboardSimple',
-        'App.view.yellowfin.Chart',
-        'App.view.yellowfin.Dashboard2',
-        'App.view.yellowfin.Chart2'
+        
+        'App.view.setup.YFConnection'
     ],
 
     controller: 'main',
@@ -90,32 +88,39 @@ Ext.define('App.view.main.Main', {
             xtype: 'dashboard'
         }]
     }, {
-        title: 'Dashboard 2',
-        iconCls: 'fa-tachometer-alt fa-half',
+        title: 'Setup',
+        iconCls: 'fa-user fa-half',
         layout: 'fit',
         items: [{
-            xtype: 'dashboard-2'
+            xtype: 'yf-connection'
         }]
-    }, {
-        title: 'Chart',
-        iconCls: 'fa-chart-line fa-half',
-        layout: 'fit',
-        items: [{
-            xtype: 'chart-example'
-        }]
-    }, {
-        title: 'Chart 2',
-        iconCls: 'fa-chart-bar fa-half',
-        layout: 'fit',
-        items: [{
-            xtype: 'chart-example-2'
-        }]
-    }, {
-        title: 'Dashboard Embed',
-        iconCls: 'fa-shoe-prints fa-half',
-        layout: 'fit',
-        items: [{
-            xtype: 'dashboardsimple'
-        }]
+    // }, {
+    //     title: 'Chart',
+    //     iconCls: 'fa-chart-line fa-half',
+    //     layout: 'fit',
+    //     items: [{
+    //         xtype: 'chart-example'
+    //     }]
+    // }, {
+    //     title: 'Chart 2',
+    //     iconCls: 'fa-chart-bar fa-half',
+    //     layout: 'fit',
+    //     items: [{
+    //         xtype: 'chart-example-2'
+    //     }]
+    // }, {
+    //     title: 'Chart 3',
+    //     iconCls: 'fa-chart-bar fa-half',
+    //     layout: 'fit',
+    //     items: [{
+    //         xtype: 'chart-example-3'
+    //     }]
+    // }, {
+    //     title: 'Dashboard Embed',
+    //     iconCls: 'fa-shoe-prints fa-half',
+    //     layout: 'fit',
+    //     items: [{
+    //         xtype: 'dashboardsimple'
+    //     }]
     }]
 });

@@ -1,0 +1,36 @@
+<html>
+    <head><title>direct test</title></head>
+    <script src="http://yellowfin.sencha.local:8080/JsAPI/v3"></script>
+    <body>
+        <div id="MyDashboard" class="dashboard"></div>
+        <script type="text/javascript">
+
+            function loadDashboard(divId,dashboardId) {
+                let options = {
+                    element: document.querySelector('div#'+divId),
+                    dashboardUUID: dashboardId,
+                }
+                window['yellowfin'].dashboards.loadDashboard(options).then(function(data) {
+                    return;
+                }).catch(function(data) {
+                    if(data.accessDenied) {
+                        document.querySelector('div#'+divId).innerHTML = data.accessDenied;
+                    }
+                });
+            }
+
+            function initYF(divId,dashboardId) {
+                let me=window;
+                debugger;
+                window['yellowfin'].loadDashboardAPI().then(function() {
+                    me.loadDashboard(divId,dashboardId);
+                });
+            }
+
+            window.onload = function () {
+                initYF("MyDashboard","e7409ff2-f846-44e1-a603-b78ec51b20b9");
+            }
+            
+        </script>
+    </body>
+</html>

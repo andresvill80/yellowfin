@@ -20,7 +20,7 @@ Ext.define('App.view.yellowfin.Dashboard2', {
         // Uses singleton
         App.yellowfin.Yellowfin.loadDashboard({
             url: 'http://yellowfin.sencha.local:8080', //Required
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdCI6InVzZXIiLCJsYXN0IjoidHdvIiwidXNlcklkIjoidGVzdEB0ZXN0LmNvbSJ9.R8KHeKG0eogRhvOZbyfqdZzRHtJvxPbR7NGyQ-mmWL4',
+            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiJ0ZXN0QHRlc3QuY29tIiwiZmlyc3ROYW1lIjoiRG9lIn0.nkI-ayWggv3YAydPHqH5FP94YVV0NafF2ah4bfTV89k',
             dashKey: "f20c11a1-4aa3-4a2c-925a-209ba032558f",
             callback: function (newDashboard) {
                 me.add(newDashboard);
